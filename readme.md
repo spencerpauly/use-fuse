@@ -8,6 +8,15 @@ This hook takes [Fuse.js](https://fusejs.io/), the popular client-side fuzzy-sea
 * Speedy performance
 * Can search nested keys of an object
 
+## How To Install
+Grab the `useFuse.ts` file and put it into your own project. You'll also need to install fuse.js:
+```
+$ npm install --save fuse.js
+```
+or
+```
+$ yarn add fuse.js
+```
 
 ## How To Use
 For a complete example, check the `examples.tsx` file.
