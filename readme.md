@@ -31,3 +31,25 @@ const { results, search, setSearch } = useFuse<MyDataType>({
 ```
 
 You can also use any additional parameters or config settings found in the [Fuse.js Library](https://fusejs.io/).
+
+Here's a more complicated example:
+
+```
+ const { results, search, setSearch } = useFuse<typeof exampleData[0]>({
+    data: exampleData,
+    keys: [
+        {
+            name: 'name',
+            weight: 1,
+        },
+        {
+            name: 'location.city',
+            weight: 0.5,
+        },
+        {
+            name: 'location.state',
+            weight: 0.1,
+        },
+    ]
+})
+```
