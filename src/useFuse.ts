@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 interface FuseParams<T> {
   data: T[];
-  keys?: any[];
+  keys?: Fuse.FuseOptionKey[];
 }
 
 const defaultOptions = {
@@ -24,7 +24,7 @@ export const useFuse = <T>({
 }: FuseParams<T>) => {
   const [results, setResults] = useState<{ item: T; refIndex: number }[]>([]);
   const [search, setSearch] = useState(DEFAULT_QUERY);
-  const fuse = useRef<any>();
+  const fuse = useRef<Fuse<T>>();
 
   useEffect(() => {
     if (!data) {
